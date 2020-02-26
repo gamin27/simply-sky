@@ -2,7 +2,8 @@
 	$category = get_the_category();
 	$cat_slug = $category[0]->category_nicename;
 	$share_url   = get_permalink();
-  $share_title = get_the_title();
+	$share_title = get_the_title();
+	$site_name = get_bloginfo('name');
 ?>
 
 <?php get_header(); ?>
@@ -64,24 +65,25 @@
 							</div>
 						</div>
 					</article>
+
 					<!-- start 共有ボタン -->
 					<article class="share-area">
 					<ul class="share-btn">
 						<!-- twitter -->
 						<li class="share-btn__item">
-							<a href="//twitter.com/share?text=<?=$share_title?>&url=<?=$share_url?>" title="Twitterでシェア" onclick="javascript:window.open(this.href, '_blank', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600');return false;" class="slide-up">
+							<a href="//twitter.com/share?text=<?=$share_title?>｜<?=$site_name?>&url=<?=$share_url?>" title="Twitterでシェア" onclick="javascript:window.open(this.href, '_blank', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600');return false;" class="slide-up">
 								<i class="fab fa-twitter"></i>
 							</a>
 						</li>
 						<!-- facebook -->
 						<li class="share-btn__item">
-						<a href="//www.facebook.com/sharer.php?src=bm&u=<?=$share_url?>&t=<?=$share_title?>" title="Facebookでシェア" onclick="javascript:window.open(this.href, '_blank', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=800,width=600');return false;" class="slide-up">
+						<a href="//www.facebook.com/sharer.php?src=bm&u=<?=$share_url?>&t=<?=$share_title?>｜<?=$site_name?>" title="Facebookでシェア" onclick="javascript:window.open(this.href, '_blank', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=800,width=600');return false;" class="slide-up">
 								<i class="fab fa-facebook-f"></i>
 							</a>
 						</li>
 						<!-- line -->
 						<li class="share-btn__item">	
-						<a href="//line.me/R/msg/text/?<?=$share_title.'%0A'.$share_url?>" target="_blank" title="LINEに送る" class="slide-up">
+						<a href="//line.me/R/msg/text/?<?=$share_title.'｜'.$site_name.'%0A'.$share_url?>" target="_blank" title="LINEに送る" class="slide-up">
 							<i class="fab fa-line"></i>
 							</a>
 						</li>

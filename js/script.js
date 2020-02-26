@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
   //目次追加
   makeTableOfContents('js_toc', 'js_note', 'link-hover');
 
+  //アマゾンリンクカード生成
+  makeAmznCard();
+
   //href^=#のa要素にスクロールアニメーションを追加
   sectionScroll();
 
@@ -58,26 +61,73 @@ function makeTableOfContents(tocClassName, entryClassName, addClass='') {
   }); 
 }
 
+/**
+ * アマゾンリンクカードを生成する
+ */
+function makeAmznCard() {
+  let cardList = document.getElementsByClassName('amzn-card_js');
+  cardList = Array.from(cardList);
 
-// /** 画面トップにスクロールする機能 */
-// function scrollTop() {
-//   //.js_scrollTTopの要素を取得
-//   let scrollTopList = document.getElementsByClassName('js_scrollTop');
-//   //配列に変換
-//   scrollTopList = Array.from(scrollTopList);
+  const attr_name = 'name';
+  const attr_img_url = 'img-url';
+  const attr_link = 'link';
+  const btnName = 'Amazon.co.jpで購入';
+  const div = 'div';
+  const a = 'a';
+  const p = 'p';
+  const span = 'span';
+  const img = 'img';
+  const cl_amznName = 'amzn-name';
+  const cl_amznUrl = 'amzn-url';
+  const cl_amznLink__text = 'amzn-link__text';
+  const cl_amznLink__a = 'amzn-link__a';
+  const cl_amznLink__img = 'amzn-link__img';
+  const cl_amznLink = 'amzn-link';
+  const blank = '_blank';
 
-//   //js_scrollTopが割り当てられている数だけ繰り返す
-//   scrollTopList.forEach(function(value){
-//     //イベントリスナー：クリック
-//     value.addEventListener('click', function(e){
-//       //a要素のデフォルトのクリックイベントを無効化
-//       e.preventDefault();
-//       //スクロール
-//       pageTop();
-//     });
-//   }); 
-// }
 
+  cardList.forEach(function (index) {
+    let name = index.getAttribute(attr_name);
+    let img_url = index.getAttribute(attr_img_url);
+    let link = index.getAttribute(attr_link);
+    let div_amznLink = document.createElement(div);
+    let el_a = document.createElement(a);
+    let div_text = document.createElement(div);
+    let p_name = document.createElement(p);
+    let p_url = document.createElement(p);
+    let el_span = document.createElement(span);
+    let div_img = document.createElement(div);
+    let el_img = document.createElement(img)
+
+    //div.amzn-link__text要素の生成
+    p_name.classList.add(cl_amznName);
+    p_name.innerHTML = name;
+    p_url.classList.add(cl_amznUrl);
+    el_span.innerHTML = btnName;
+    p_url.appendChild(el_span);
+    div_text.classList.add(cl_amznLink__text);
+    div_text.appendChild(p_name);
+    div_text.appendChild(p_url);
+
+    //a要素の生成
+    el_a.href = link;
+    el_a.classList.add(cl_amznLink__a);
+    el_a.target = blank;
+
+    //div>img要素の生成
+    div_img.classList.add(cl_amznLink__img);
+    el_img.src = img_url;
+    div_img.appendChild(el_img);
+
+    //div.amzn-linkの生成
+    div_amznLink.classList.add(cl_amznLink);
+    div_amznLink.appendChild(el_a);
+    div_amznLink.appendChild(div_text);
+    div_amznLink.appendChild(div_img);
+    
+    index.appendChild(div_amznLink);
+  });
+}
 
 /** スクロールのアニメーション機能 */
 function pageTop() {

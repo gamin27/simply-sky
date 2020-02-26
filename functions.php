@@ -91,7 +91,7 @@ function myportfolio_scripts() {
 		'base-style'
 		, get_stylesheet_uri()
 		, array('reset-style')
-		, '1.3.3'
+		, '1.4.13'
 		, 'all'
 	);
 	
@@ -118,7 +118,7 @@ function myportfolio_scripts() {
 		'main-script'
 		, get_theme_file_uri('js/script.js')
 		, array('DCN-jQuery')
-		, '1.2'
+		, '1.3'
 		, true
 	);
 	
