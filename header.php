@@ -8,7 +8,6 @@
 「この方がCSS設計カッコよろしいで。」
 みたいな指摘があればこっそりtwitterでDM下さい。
 コーヒーおごります。
-twitter:@homusuke
 -->
 <html <?php language_attributes(); ?>>
 

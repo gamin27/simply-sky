@@ -2,7 +2,7 @@
 /* 各種設定 ------------------------------------------------------------------- */
 function gamin_get($key) {
 	/** twittter アカウント名 @xxxx  */
-	$twitter_at = 'homusuke';
+	$twitter_at = 'y_u___27';
 	/** ホーム画面のdescription、いわゆる紹介文(SEO対策) */
 $home_description= 'HSP(刺激に敏感な人)によるHSPのためのブログサイトです。会社がつらい、生きづらさを感じる、といった問題を抱えている人が前向きになれるブログサイトを目指します。';
 
@@ -91,7 +91,7 @@ function myportfolio_scripts() {
 		'base-style'
 		, get_stylesheet_uri()
 		, array('reset-style')
-		, '1.4.13'
+		, '1.6.0'
 		, 'all'
 	);
 	
@@ -118,7 +118,7 @@ function myportfolio_scripts() {
 		'main-script'
 		, get_theme_file_uri('js/script.js')
 		, array('DCN-jQuery')
-		, '1.3'
+		, '1.4.4'
 		, true
 	);
 	
