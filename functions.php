@@ -2,9 +2,9 @@
 /* 各種設定 ------------------------------------------------------------------- */
 function gamin_get($key) {
 	/** twittter アカウント名 @xxxx  */
-	$twitter_at = 'y_u___27';
+	$twitter_at = '';
 	/** ホーム画面のdescription、いわゆる紹介文(SEO対策) */
-$home_description= 'HSP(刺激に敏感な人)によるHSPのためのブログサイトです。会社がつらい、生きづらさを感じる、といった問題を抱えている人が前向きになれるブログサイトを目指します。';
+$home_description= '';
 
 	try {
 		switch($key) {
